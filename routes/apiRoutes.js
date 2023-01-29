@@ -6,9 +6,6 @@ const test = process.env.TEST;
 const weatherApiKey = process.env.WEATHER_API_KEY;
 
 router
-	.get("/test", (req, res) => {
-		res.send(`${test}`);
-	})
 	.get("/weather", (req, res) => {
 		res.send(`${weatherApiKey}`);
 	})

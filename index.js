@@ -4,7 +4,7 @@ const apiRoutes = require("./routes/apiRoutes.js");
 const cors = require("cors");
 ////////////////////////
 const app = express();
-const PORT = process.env.PORT || 4500;
+const PORT = process.env.PORT || 4000;
 ////////////////////////
 app.use(cors());
 app.use("/", apiRoutes);
