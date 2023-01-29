@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+* {
+	font-family: Ubuntu;
+	box-sizing: border-box;
+}
+#root {
+	width: 100%;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: linear-gradient(#14b0b3, #1f4d4d);
+	height: 100vh;
+	width: 50%;
+	margin: auto;
+	color: white;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	height: 100vh;
+	align-items: center;
+	justify-content: flex-start;
+}
+.location,
+.temperature {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	margin: 15px 0px;
+	height: 10%;
+	box-sizing: border-box;
+}
+.location {
+	justify-content: space-around;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.location-title h1,
+.location-title h3,
+.card h3 {
+	margin: 0px;
+	padding: 0px;
+}
+.temperature {
+	flex-direction: row;
+	align-items: center;
+}
+.temperature-degree {
+	font-size: 50px;
+}
+.temperature-unit {
+	font-size: 25px;
+	margin-left: 10px;
+	padding-bottom: 5px;
+}
+.temperature-information {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 span {
+	margin: 0px 5px;
+	font-size: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgba(240, 255, 255, 0.301);
+	padding: 10px 50px;
+	border-radius: 15px;
+	margin: 5px;
+	height: 200px;
+	width: 200px;
+}
+.card p {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 1.2em;
+	padding: 0px;
+	margin: 0px;
+}
+.card svg {
+	height: 30%;
+	fill: white;
 }
 
-.App-link {
-  color: #61dafb;
+.other-information {
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#disclaimer {
+	position: fixed;
+	bottom: 0;
+	color: rgba(255, 255, 255, 0.349);
 }
