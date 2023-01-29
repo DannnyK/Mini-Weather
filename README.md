@@ -7,5 +7,5 @@ To run:
     npm start
 ___
 
-
+Allow location access and give it a few seconds to find your location
 
