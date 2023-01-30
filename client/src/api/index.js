@@ -11,9 +11,7 @@ export async function getSecret(delta) {
 }
 
 export async function getData(secret, coords) {
-	console.log(secret, coords);
 	const newUrl = `${weatherUrlStart}${secret}&q=${coords}&aqi=no`;
-	console.log(newUrl);
 	const result = await axios
 		.get(newUrl)
 		.then((response) => response.data)
