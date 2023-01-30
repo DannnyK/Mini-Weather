@@ -20,7 +20,7 @@ const Weather = (data) => {
 					/>
 				</div>
 			</div>
-			<h2>It's {information?.current.condition.text} today</h2>
+			<h2 id="condition">It's {information?.current.condition.text} today</h2>
 
 			<div className="temperature">
 				<div className="temperature-degree">
