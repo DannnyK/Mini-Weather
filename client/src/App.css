@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;900;1000&display=swap");
 * {
-	font-family: Ubuntu;
+	font-family: "Nunito", sans-serif;
 	box-sizing: border-box;
+	transition: all 250ms;
 }
 #root {
 	width: 100%;
@@ -10,7 +12,13 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: linear-gradient(#14b0b3, #1f4d4d);
+	background: rgb(6, 153, 55);
+	background: linear-gradient(
+		135deg,
+		rgba(6, 153, 55, 1) 0%,
+		rgba(0, 254, 255, 1) 0%,
+		rgba(0, 94, 133, 1) 100%
+	);
 	height: 100vh;
 	width: 50%;
 	margin: auto;
@@ -21,6 +29,7 @@ body {
 	flex-direction: column;
 	box-sizing: border-box;
 	height: 100vh;
+	width: 100%;
 	align-items: center;
 	justify-content: flex-start;
 }
@@ -38,6 +47,9 @@ body {
 .location {
 	justify-content: space-around;
 }
+.location-title h1 {
+	font-weight: 1000;
+}
 
 .location-title h1,
 .location-title h3,
@@ -50,9 +62,12 @@ body {
 	align-items: center;
 }
 .temperature-degree {
+	font-weight: 900;
 	font-size: 50px;
 }
 .temperature-unit {
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
 	font-size: 25px;
 	margin-left: 10px;
 	padding-bottom: 5px;
@@ -65,6 +80,7 @@ body {
 }
 
 h3 span {
+	font-weight: 300;
 	margin: 0px 5px;
 	font-size: 25px;
 }
@@ -82,12 +98,14 @@ h3 span {
 	width: 200px;
 }
 .card p {
+	font-weight: 400;
 	color: rgba(255, 255, 255, 0.8);
 	font-size: 1.2em;
 	padding: 0px;
 	margin: 0px;
 }
 .card svg {
+	padding: 1px;
 	height: 30%;
 	fill: white;
 }
@@ -102,4 +120,142 @@ h3 span {
 	position: fixed;
 	bottom: 0;
 	color: rgba(255, 255, 255, 0.349);
+}
+#disclaimer img {
+	width: 75px;
+}
+
+#location-btn {
+	height: 40px;
+	width: 40px;
+	border-radius: 100px;
+	border: none;
+	padding: 7px;
+	background-color: rgba(255, 255, 255, 0.25);
+	color: white;
+	fill: white;
+}
+#location-btn:hover {
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+#location-btn:active {
+	transform: scale(90%);
+}
+#Logo {
+	margin-top: 20px;
+	height: 100px;
+	fill: white;
+}
+
+@media screen and (max-width: 430px) {
+	* {
+		font-size: 20px;
+	}
+	body {
+		width: 100%;
+		padding: 5px;
+		height: 100vh;
+	}
+
+	.main {
+		height: 100%;
+	}
+	.temperature-information {
+		width: 100%;
+	}
+	.temperature-degree h1 {
+		font-size: 100px;
+	}
+	.temperature-unit {
+		align-self: baseline;
+	}
+	#temperature-feels-like {
+		font-size: 17px;
+	}
+	#wind-direction,
+	#visible-range {
+		font-size: 17px;
+	}
+	#wind-direction span,
+	#visible-range span {
+		font-size: 20px;
+	}
+	.location {
+		align-items: center;
+	}
+	.location-title {
+		border-left: 3px solid white;
+		padding-left: 5px;
+	}
+	.location-icon img {
+		height: 75px;
+	}
+	.card {
+		width: 32%;
+		padding: 15px;
+		height: 150px;
+	}
+	.card svg {
+		height: 20%;
+	}
+	.card h3,
+	.card p {
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: 635px) {
+	* {
+		font-size: 20px;
+	}
+	body {
+		width: 100%;
+		padding: 5px;
+		height: 100vh;
+	}
+
+	.main {
+		height: 100%;
+	}
+	.temperature-information {
+		width: 100%;
+	}
+	.temperature-degree h1 {
+		font-size: 100px;
+	}
+	.temperature-unit {
+		align-self: baseline;
+	}
+	#temperature-feels-like {
+		font-size: 17px;
+	}
+	#wind-direction,
+	#visible-range {
+		font-size: 17px;
+	}
+	#wind-direction span,
+	#visible-range span {
+		font-size: 20px;
+	}
+	.location {
+		align-items: center;
+	}
+
+	.location-icon img {
+		height: 75px;
+	}
+	.card {
+		border-radius: 25px;
+		font-size: 0.7em;
+		width: 32%;
+		padding: 1em;
+		height: 150px;
+	}
+	.card svg {
+		height: 25%;
+	}
+	/* .card h3,
+	.card p {
+		font-size: 15px;
+	} */
 }

@@ -3,14 +3,19 @@ import { getSecret, getData } from "./api";
 import { useState } from "react";
 import { useEffect } from "react";
 import Weather from "./components/Weather";
+import HomePage from "./components/HomePage";
+import { ReactComponent as LocationIcon } from "./icons/location-dot-solid.svg";
+import Loader from "./components/Loader";
 
 function App() {
-	const [secret, setSecret] = useState();
+	const [secret, setSecret] = useState(null);
+	const [loading, setLoading] = useState(false);
 	const key = "weather";
 
 	function load() {
 		let lat, long;
 		if (navigator.geolocation) {
+			setLoading(true);
 			navigator.geolocation.getCurrentPosition(async (position) => {
 				long = position.coords.longitude;
 				lat = position.coords.latitude;
@@ -19,18 +24,18 @@ function App() {
 					const data = await getSecret(key).then((result) =>
 						getData(result, coords)
 					);
+					setLoading(false);
 					setSecret(data);
-					console.log(data.current);
-					console.log(data.current.temp_c);
 					return data;
 				}
-				console.log("finished loading");
 				return newSecret();
 			});
+		} else {
+			alert("Geolocation is not supported by this browser");
 		}
 	}
 	useEffect(() => {
-		load();
+		// load();
 	}, []);
 
 	return (
@@ -38,7 +43,25 @@ function App() {
 			{secret ? (
 				<Weather data={secret} />
 			) : (
-				<h1>Please enable your location :(</h1>
+				<>
+					{loading ? (
+						<>
+							<HomePage loading={loading} />
+							<Loader />
+						</>
+					) : (
+						<>
+							<HomePage />
+							<h1>Please enable your location</h1>
+							<LocationIcon
+								id="location-btn"
+								onClick={() => {
+									load();
+								}}
+							/>
+						</>
+					)}
+				</>
 			)}
 		</div>
 	);
